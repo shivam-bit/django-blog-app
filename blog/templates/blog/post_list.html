@@ -1,9 +1,13 @@
 <html>
     <head>
         <title>Django Girls blog</title>
+        <!-- {{ posts }} -->
+        <!-- {% for post in posts %}
+            {{ post }}
+        {% endfor %} -->
     </head>
     <body>
-        <div>
+        <!-- <div>
             <h1><a href="/">Django Girls Blog</a></h1>
         </div>
 
@@ -17,6 +21,13 @@
             <p>published: 14.06.2014, 12:14</p>
             <h2><a href="">My second post</a></h2>
             <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
+        </div> -->
+        {% for post in posts %}
+        <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
         </div>
+        {% endfor %}
     </body>
 </html>
